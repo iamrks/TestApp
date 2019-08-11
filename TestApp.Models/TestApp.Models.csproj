@@ -54,9 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="CreateRoleModel.cs" />
+    <Compile Include="DTO\RoleReturnModel.cs" />
     <Compile Include="DTO\UserReturnModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserModel.cs" />
+    <Compile Include="UsersInRoleModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

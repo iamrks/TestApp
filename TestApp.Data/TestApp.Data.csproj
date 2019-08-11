@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="ApplicationRoleManager.cs" />
     <Compile Include="ApplicationUserManager.cs" />
     <Compile Include="Migrations\201908110723396_InitialCreate.cs" />
     <Compile Include="Migrations\201908110723396_InitialCreate.Designer.cs">

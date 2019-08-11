@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using System.Security.Claims;
 using System.Web.Http;
-using TestApp.Api.Filters;
 using TestApp.Data;
 
 namespace TestApp.Api.Controllers
@@ -9,7 +8,7 @@ namespace TestApp.Api.Controllers
     [RoutePrefix("api/products")]
     public class ProductController : BaseApiController
     {
-        [CustomAuthorize]
+        [Authorize]
         [Route("")]
         public IHttpActionResult Get()
         {

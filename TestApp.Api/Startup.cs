@@ -2,9 +2,6 @@
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using TestApp.Api.Providers;
 using TestApp.Data;
@@ -28,8 +25,9 @@ namespace TestApp.Api
             // Configure the db context and user manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
 
-            // Plugin the OAuth bearer JSON Web Token tokens generation and Consumption will be here
+            // Plugin the OAuth bearer tokens generation and Consumption will be here
             ConfigureOAuth(app);
         }
 
