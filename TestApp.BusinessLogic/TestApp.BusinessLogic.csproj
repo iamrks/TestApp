@@ -75,6 +75,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\Interfaces\IAuthRepository.cs" />
+    <Compile Include="Infrastructure\Interfaces\ICategoryRepository.cs" />
+    <Compile Include="Infrastructure\Interfaces\IProductRepository.cs" />
+    <Compile Include="Infrastructure\Interfaces\IRepository.cs" />
+    <Compile Include="Infrastructure\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

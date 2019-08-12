@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestApp.Models;
+using System.Data.Entity;
+using TestApp.Data.Mappers;
 
 namespace TestApp.Data
 {
@@ -16,9 +13,19 @@ namespace TestApp.Data
             Configuration.LazyLoadingEnabled = false;
         }
 
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new ProductMapper());
+            modelBuilder.Configurations.Add(new CategoryMapper());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
