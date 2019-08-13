@@ -3,6 +3,9 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
 using System.Web.Http;
+using System.Web.Mvc;
+using System.Web.Optimization;
+using System.Web.Routing;
 using TestApp.Api.Providers;
 using TestApp.Data;
 
@@ -15,7 +18,14 @@ namespace TestApp.Api
         {
             HttpConfiguration config = new HttpConfiguration();
             ConfigureOAuthTokenGeneration(app);
+
+            AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+
             WebApiConfig.Register(config);
+
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.UseWebApi(config);
         }

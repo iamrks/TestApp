@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
 using TestApp.Data.Repositories;
 using TestApp.Models;
 
@@ -24,6 +25,7 @@ namespace TestApp.Api.Controllers
         }
 
         [Route("users")]
+        [ResponseType(typeof(List<ApplicationUser>))]
         public IHttpActionResult GetUser()
         {
             var users = this.AppUserManager.Users.ToList();
